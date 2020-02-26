@@ -4,12 +4,6 @@
 // Je crée une page booter.php qui va contenir la fonction session_start() et que je vais inclure à l’aide de 'include' ou 'require' dans les pages voulues d’un site.
 session_start();
 
-
-
-
-
-
-
 //********************************                           FONCTIONS BDD                  *****************************************************************
 
 // fonction qui permet de se connecter à MySQL
@@ -25,32 +19,45 @@ function connectionBdd()
     }
     return $bdd;
 }
-
-// appel de la fonction qui permet de se connecter à la BDD
 $bdd = connectionBdd();
 
 
-
-// Fonction qui permet d'afficher une table
-function afficheTable($table, $bdd)
+// Fonction qui affiche la liste des articles
+function listeArticles($bdd)
 {
-// On récupère tout le contenu de la table datashop
-    $reponse = $bdd->query('SELECT * FROM $table');
-    return $reponse;
+//    $articles = array();
+//Création d'objets catalogue
+    $cat = new Catalogue();
+    $requestCatalogue = $bdd->query('SELECT idProduct, productName, price, image, description FROM product LIMIT 1,10');
+    while ($donnees = $requestCatalogue->fetch(PDO::FETCH_ASSOC)) // Chaque entrée sera récupérée et placée dans un array.
+    {
+// Création d'objets articles
+        $art = new Article($donnees["idProduct"],$donnees["productName"], $donnees["price"], $donnees["image"], $donnees["description"]);
+// stocker article dans catalogue
+        $cat->setArticle($art);
+
+    }
+    return $cat;
 }
 
 
 
-
-
-
-
-//********************************                           FONCTIONS CALCULS                    *****************************************************************
-
-// fonction qui retourne le total du panier et affiche ce total
-function totalPanier($sumTotal, $prixProduit, $quantiProduit)
+//Fonction qui affiche la liste des clients
+function listeClient($bdd)
 {
-    return $sumTotal + $prixProduit* ($quantiProduit=intval($quantiProduit)) ;
+//    $clients = array();
+//Création d'objets liste client
+    $listeClient = new ListeClient();
+    $requestListeClient = $bdd->query('SELECT firstName, name, address, CP, city FROM client');
+    while ($donnees = $requestListeClient->fetch(PDO::FETCH_ASSOC)) // Chaque entrée sera récupérée et placée dans un array.
+    {
+// Création d'objets client
+        $client = new Client($donnees["firstName"], $donnees["name"], $donnees["address"], $donnees["CP"], $donnees["city"]);
+// stocker client dans liste client
+        $listeClient->setClients($client);
+
+    }
+    return $listeClient;
 }
 
 ?>

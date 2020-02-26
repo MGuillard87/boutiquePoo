@@ -2,11 +2,11 @@
 // On démarre la session AVANT d'écrire du code HTML
 // Inclusion de la page booter.php qui va:  contenir la fonction session_start()
 //Inclusion du fichier 'function.php' pour faire appel au différentes fonctions
-// Inclusion de la page 'classe_catalogue_poo.php' qui va mettre en lien le catalogue et la page classe Catalogue
+// Inclusion de la page 'classe_liste_client_poo.php' qui va mettre en lien la page liste_client et la page classe liste client poo
 
 include('booter.php');
 include('functions.php');
-include('classe_catalogue_poo.php');
+include('classe_liste_client_poo.php');
 
 ?>
 
@@ -23,20 +23,16 @@ include('classe_catalogue_poo.php');
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>Boutique</h1>
+                    <h1>Nos clients</h1>
                 </div>
             </div>
-            <form method="post" action="panierTest.php">
-
                 <?php
                 // Modification du programme 'catalogue' qui affiche une liste d'articles en utilisant la classe Catalogue
-                $cat = listeArticles($bdd);
-                displayCat($cat);
-                ?>
-                <div class="row-12 align-self-center" >
-                    <input type="submit" value="commander"/>
-                </div>
-            </form>
+                $liste_client = listeClient($bdd);
+//                displayClient($liste_client);
+                foreach ($liste_client->getClients() as $client){
+                    displayClient($client);
+                } ?>
         </div>
     </body>
 </html>

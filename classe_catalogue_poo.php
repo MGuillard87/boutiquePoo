@@ -1,15 +1,25 @@
 <?php
+// Inclusion de la page 'classe_article_poo.php' qui va mettre en lien la classe Article et la classe Catalogue
+include('classe_article_poo.php');
+
 class Catalogue {
-    private $article = [];
 
-    // Constructeur demandant 1 paramètres
+    private $articles = [];
 
-    public function __construct($productName, $price, $image, $description)
+    // Liste des getters
+
+    public function getArticles()
     {
-        $this->setProductName($productName); // Initialisation de l'attribut nom du produit
-        $this->setDescription($description); // Initialisation de l'attribut description
-        $this->setPrice($price); // Initialisation de l'attribut prix
-        $this->setImage($image); // Initialisation de l'attribut image
+        return $this->articles;
+    }
+
+    // Liste des setters
+
+    public function setArticle($article): void
+    {
+        $this->articles[] = $article;
     }
 
 }
+
+

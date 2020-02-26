@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7454674-774e-451a-b2de-0c3153194160" name="Default Changelist" comment="" />
+    <list default="true" id="e7454674-774e-451a-b2de-0c3153194160" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/classe_client_poo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classe_liste_client_poo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/liste_client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booter.php" beforeDir="false" afterPath="$PROJECT_DIR$/booter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classe_article_poo.php" beforeDir="false" afterPath="$PROJECT_DIR$/classe_article_poo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classe_catalogue_poo.php" beforeDir="false" afterPath="$PROJECT_DIR$/classe_catalogue_poo.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exophp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../boutique_bdd" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -87,7 +98,9 @@
       <workItem from="1582099320702" duration="21942000" />
       <workItem from="1582186196939" duration="14224000" />
       <workItem from="1582272351885" duration="3426000" />
-      <workItem from="1582618894532" duration="11620000" />
+      <workItem from="1582618894532" duration="16471000" />
+      <workItem from="1582704041634" duration="18091000" />
+      <workItem from="1582725971501" duration="957000" />
     </task>
     <task id="LOCAL-00001" summary="1er commit phpstorm">
       <created>1580732727962</created>
@@ -128,10 +141,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2496" y="179" key="#PHP/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581941579214" />
-    <state x="2472" y="179" key="#SQL_Dialects" timestamp="1582211451457">
+    <state x="2472" y="179" key="#SQL_Dialects" timestamp="1582724164089">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="179" key="#SQL_Dialects/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582211451457" />
+    <state x="2472" y="179" key="#SQL_Dialects/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582724164089" />
     <state x="2748" y="187" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582211549208">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -149,18 +162,18 @@
     </state>
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580732933238" />
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580826097724" />
-    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1582619597362">
+    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1582719981570">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582619597362" />
+    <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582719981570" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1582211559469">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582211559469" />
-    <state x="2714" y="444" key="NewPhpFileDialog" timestamp="1582636005500">
+    <state x="2714" y="444" key="NewPhpFileDialog" timestamp="1582721477687">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582636005500" />
+    <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582721477687" />
     <state x="2714" y="444" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580821766743" />
     <state x="2381" y="163" key="SettingsEditor" timestamp="1580732679886">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -170,10 +183,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580826097724" />
-    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582618825923">
+    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582725971610">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582618825923" />
+    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582725971610" />
     <state x="2689" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581934409615">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -182,6 +195,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580986886028" />
+    <state x="2543" y="225" key="search.everywhere.popup" timestamp="1582723549662">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582723549662" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -192,13 +209,13 @@
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/classe_article_poo.php</url>
-          <line>7</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/booter.php</url>
+          <line>54</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/classe_article_poo.php</url>
-          <line>19</line>
+          <line>2</line>
           <properties>
             <option name="className" value="\Article" />
             <option name="methodName" value="getProductName" />
@@ -206,31 +223,13 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/classe_article_poo.php</url>
-          <line>24</line>
+          <url>file://$PROJECT_DIR$/booter.php</url>
+          <line>25</line>
           <properties>
-            <option name="className" value="\Article" />
-            <option name="methodName" value="getDescription" />
+            <option name="className" value="" />
+            <option name="methodName" value="\listeArticles" />
           </properties>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/classe_article_poo.php</url>
-          <line>39</line>
-          <properties>
-            <option name="className" value="\Article" />
-            <option name="methodName" value="getWeight" />
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/classe_article_poo.php</url>
-          <line>66</line>
-          <properties>
-            <option name="className" value="\Article" />
-            <option name="methodName" value="setPrice" />
-          </properties>
-          <option name="timeStamp" value="21" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
