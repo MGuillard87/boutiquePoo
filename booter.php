@@ -27,17 +27,33 @@ function listeArticles($bdd)
 {
 //    $articles = array();
 //Création d'objets catalogue
-    $cat = new Catalogue();
-    $requestCatalogue = $bdd->query('SELECT idProduct, productName, price, image, description FROM product LIMIT 1,10');
+    $catalogue = new Catalogue();
+    $requestCatalogue = $bdd->query('SELECT product.idProduct, productName, price, image, description, shoeSize, clothingSize  
+                                    from `product`
+                                    LEFT OUTER JOIN shoes ON product.idProduct = shoes.idProduct
+                                    LEFT OUTER JOIN clothing ON product.idProduct = clothing.idProduct');
     while ($donnees = $requestCatalogue->fetch(PDO::FETCH_ASSOC)) // Chaque entrée sera récupérée et placée dans un array.
     {
 // Création d'objets articles
-        $art = new Article($donnees["idProduct"],$donnees["productName"], $donnees["price"], $donnees["image"], $donnees["description"]);
-// stocker article dans catalogue
-        $cat->setArticle($art);
+        if ($donnees['shoeSize'] !== NULL){
+            $shoe = new Chaussure($donnees["idProduct"],$donnees["productName"], $donnees["price"], $donnees["image"], $donnees["description"], $donnees["shoeSize"]);
+            // stocker shoe dans catalogue
+            $catalogue->setShoe($shoe);
+        }
+        elseif ($donnees['clothingSize'] !== NULL){
+            $cloth = new Vetement($donnees["idProduct"],$donnees["productName"], $donnees["price"], $donnees["image"], $donnees["description"], $donnees["clothingSize"]);
+            // stocker clothing dans catalogue
+            $catalogue->setClothing($cloth);
+        }
+        else{
+            $art = new Article($donnees["idProduct"],$donnees["productName"], $donnees["price"], $donnees["image"], $donnees["description"]);
+            // stocker article dans catalogue
+            $catalogue->setArticle($art);
+        }
 
     }
-    return $cat;
+//    var_dump($catalogue);die;
+    return $catalogue;
 }
 
 

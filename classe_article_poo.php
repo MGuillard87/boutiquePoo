@@ -95,17 +95,80 @@ class Article
         $this->availability = $availability;
     }
 
-    // Constructeur demandant 3 paramètres
+    // Constructeur demandant 5 paramètres
 
     public function __construct($idProduct, $productName, $price, $image, $description)
     {
         $this->setIdProduct($idProduct); // Initialisation de l'attribut id du produit
         $this->setProductName($productName); // Initialisation de l'attribut nom du produit
-//        $this->setDescription($description); // Initialisation de l'attribut description
         $this->setPrice($price); // Initialisation de l'attribut prix
         $this->setImage($image); // Initialisation de l'attribut image
         $this->setDescription($description); // Initialisation de l'attribut image
+
     }
+
+}
+
+
+// Notre classe Vêtement hérite des attributs et méthodes de Article.
+
+class Vetement extends Article
+{
+    private $clothingSize;
+
+    // Liste des getters
+
+    public function getClothingSize()
+    {
+        return $this->clothingSize;
+    }
+
+    // Liste des setters
+
+    public function setClothingSize($clothingSize): void
+    {
+        $this->clothingSize = $clothingSize;
+    }
+
+    // Constructeur demandant 6 paramètres (toujours en premier)
+    public function __construct($idProduct, $productName, $price, $image, $description, $clothingSize)
+    {
+        parent::__construct($idProduct, $productName, $price, $image, $description);
+        $this->setClothingSize($clothingSize); // Initialisation de l'attribut taille de vêtement
+    }
+
+
+}
+
+// Notre classe Chaussure hérite des attributs et méthodes de Article.
+
+class Chaussure extends Article
+{
+
+    private $shoesSize;
+
+    // Liste des getters
+
+    public function getShoesSize()
+    {
+        return $this->shoesSize;
+    }
+
+    // Liste des setters
+
+    public function setShoesSize($shoesSize): void
+    {
+        $this->shoesSize = $shoesSize;
+    }
+
+
+// Constructeur demandant 6 paramètres (toujours en premier)
+    public function __construct($idProduct, $productName, $price, $image, $description, $shoesSize)
+    {
+        parent::__construct($idProduct, $productName, $price, $image, $description);
+        $this->setShoesSize($shoesSize); // Initialisation de l'attribut taille de chaussure
+    }
+
 }
 
 ?>

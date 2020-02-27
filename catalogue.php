@@ -7,6 +7,7 @@
 include('booter.php');
 include('functions.php');
 include('classe_catalogue_poo.php');
+include('classe_article_poo.php');
 
 ?>
 
@@ -30,8 +31,15 @@ include('classe_catalogue_poo.php');
 
                 <?php
                 // Modification du programme 'catalogue' qui affiche une liste d'articles en utilisant la classe Catalogue
-                $cat = listeArticles($bdd);
-                displayCat($cat);
+                $catalogue = listeArticles($bdd);
+//                var_dump($catalogue);die;
+//                $shoe = $catalogue->getShoes();
+//                  var_dump($shoe);die;
+                  displayCat1($catalogue);
+//                displayCat($catalogue);
+//                if (is_a($catalogue, Article($donnees["idProduct"]));
+
+
                 ?>
                 <div class="row-12 align-self-center" >
                     <input type="submit" value="commander"/>
