@@ -4,9 +4,7 @@
 include('booter.php');
 
 // créer quelques variables de session dans $_SESSION
-if (!empty($_POST)) {
-    $_SESSION = $_POST;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +31,13 @@ if (!empty($_POST)) {
 
     <?php
     $sumTotal = 0;
-    if (!empty($_SESSION)) { ?>
+    if (!empty($panier)) { ?>
         <?php
-        foreach ($_SESSION['products'] as $key => $selective) {
+        foreach ($panier['products'] as $key => $selective) {
             $idDentique = $bdd->query('SELECT * FROM product WHERE idProduct=' . $key);
             while ($productBasket = $idDentique->fetch()) {
 
-                if (isset($_SESSION['quantities'][$productBasket['idProduct']])) {
+                if (isset($panier['quantities'][$productBasket['idProduct']])) {
                     $quantiProduct = $_SESSION['quantities'][$productBasket['idProduct']];
                 } else {
                     $quantiProduct = 0;
@@ -66,54 +64,6 @@ if (!empty($_POST)) {
                     </div>
                 </div>
 
-        <?php
-        // Aller sélectionner le numéro de la commande et le modifier pour pouvoir le rentrer dans la table orders
-        $numCommand = $bdd->query('SELECT idOrder FROM orders ORDER BY idOrders DESC LIMIT 0,1');
-        while ($orders = $numCommand->fetch()) {
-        //  echo "le dernier numéro de commande est ". $orders['idOrder'].'<br/>';
-            $rest = substr($orders['idOrder'], -3);
-            $rest=$rest + 1;}
-        // Convertir le calcul précédent en string
-        $idOrder = strval($rest);
-
-        // Définition des variables au préalable avant une insertion préparée dans la BDD
-        $totalAmount = $sumTotal;
-        $idClient = random_int(1,2);
-        $debutNomComand='CMD00';
-
-        // Insertion des commandes dans la BDD
-        $ordersInsert = $bdd->prepare('INSERT INTO orders (idOrder, totalAmount, idClient) VALUES(:idOrder, :totalAmount, :idClient)');
-
-        $ordersInsert->execute(array(
-            'idOrder' => $debutNomComand . $idOrder,
-            'totalAmount' => $totalAmount,
-            'idClient' => $idClient
-        ));
-        $ordersInsert->closeCursor();
-        echo 'la commande a bien été ajoutée !'. '</br>';
-
-        // Récupération de l'idOrders avec la fonction 'lastInsertID' qui retourne l'identifiant de la dernière ligne insérée
-        $idOrders = $bdd->lastInsertId('SELECT idOrder FROM orders ');
-
-        // Définition des variables au préalable avant une insertion préparée dans la BDD
-        $quantity =  $_SESSION['quantities'];
-        $idProduct = $_SESSION['products'];
-
-        // Insertion des produits commandés dans la BDD
-        foreach ($idProduct as $key=>$product) {
-            $orderProductInsert = $bdd->prepare('INSERT INTO orderproduct (quantity, idOrders, idProduct) VALUES(:quantity, :idOrders, :idProduct)');
-
-            $orderProductInsert->execute(array(
-                'quantity' => $quantity[$key],
-                'idOrders' => $idOrders,
-                'idProduct' => $key
-            ));
-        }
-    }
-
-    // Finalement, on détruit la session.
-//    session_destroy();
-    ?>
 
 </body>
 </html>

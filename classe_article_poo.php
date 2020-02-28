@@ -7,9 +7,18 @@ class Article
     private $description;
     private $price;
     private $image;
-    private $weight;
-    private $stock;
-    private $availability;
+
+    // Constructeur demandant 5 paramètres
+
+    public function __construct($idProduct, $productName, $price, $image, $description)
+    {
+        $this->setIdProduct($idProduct); // Initialisation de l'attribut id du produit
+        $this->setProductName($productName); // Initialisation de l'attribut nom du produit
+        $this->setPrice($price); // Initialisation de l'attribut prix
+        $this->setImage($image); // Initialisation de l'attribut image
+        $this->setDescription($description); // Initialisation de l'attribut image
+
+    }
 
     // Liste des getters
 
@@ -36,21 +45,6 @@ class Article
     public function getImage()
     {
         return $this->image;
-    }
-
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    public function getStock()
-    {
-        return $this->stock;
-    }
-
-    public function getAvailability()
-    {
-        return $this->availability;
     }
 
     // Liste des setters
@@ -80,33 +74,6 @@ class Article
         $this->image = $image;
     }
 
-    public function setWeight($weight): void
-    {
-        $this->weight = $weight;
-    }
-
-    public function setStock($stock): void
-    {
-        $this->stock = $stock;
-    }
-
-    public function setAvailability($availability): void
-    {
-        $this->availability = $availability;
-    }
-
-    // Constructeur demandant 5 paramètres
-
-    public function __construct($idProduct, $productName, $price, $image, $description)
-    {
-        $this->setIdProduct($idProduct); // Initialisation de l'attribut id du produit
-        $this->setProductName($productName); // Initialisation de l'attribut nom du produit
-        $this->setPrice($price); // Initialisation de l'attribut prix
-        $this->setImage($image); // Initialisation de l'attribut image
-        $this->setDescription($description); // Initialisation de l'attribut image
-
-    }
-
 }
 
 
@@ -115,6 +82,14 @@ class Article
 class Vetement extends Article
 {
     private $clothingSize;
+
+    // Constructeur demandant 6 paramètres (toujours en premier)
+
+    public function __construct($idProduct, $productName, $price, $image, $description, $clothingSize)
+    {
+        parent::__construct($idProduct, $productName, $price, $image, $description);
+        $this->setClothingSize($clothingSize); // Initialisation de l'attribut taille de vêtement
+    }
 
     // Liste des getters
 
@@ -130,12 +105,7 @@ class Vetement extends Article
         $this->clothingSize = $clothingSize;
     }
 
-    // Constructeur demandant 6 paramètres (toujours en premier)
-    public function __construct($idProduct, $productName, $price, $image, $description, $clothingSize)
-    {
-        parent::__construct($idProduct, $productName, $price, $image, $description);
-        $this->setClothingSize($clothingSize); // Initialisation de l'attribut taille de vêtement
-    }
+
 
 
 }
@@ -146,6 +116,14 @@ class Chaussure extends Article
 {
 
     private $shoesSize;
+
+// Constructeur demandant 6 paramètres (toujours en premier)
+
+    public function __construct($idProduct, $productName, $price, $image, $description, $shoesSize)
+    {
+        parent::__construct($idProduct, $productName, $price, $image, $description);
+        $this->setShoesSize($shoesSize); // Initialisation de l'attribut taille de chaussure
+    }
 
     // Liste des getters
 
@@ -159,14 +137,6 @@ class Chaussure extends Article
     public function setShoesSize($shoesSize): void
     {
         $this->shoesSize = $shoesSize;
-    }
-
-
-// Constructeur demandant 6 paramètres (toujours en premier)
-    public function __construct($idProduct, $productName, $price, $image, $description, $shoesSize)
-    {
-        parent::__construct($idProduct, $productName, $price, $image, $description);
-        $this->setShoesSize($shoesSize); // Initialisation de l'attribut taille de chaussure
     }
 
 }

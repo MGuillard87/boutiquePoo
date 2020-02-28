@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7454674-774e-451a-b2de-0c3153194160" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/classe_panier_poo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testpanier.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booter.php" beforeDir="false" afterPath="$PROJECT_DIR$/booter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/catalogue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classe_article_poo.php" beforeDir="false" afterPath="$PROJECT_DIR$/classe_article_poo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classe_catalogue_poo.php" beforeDir="false" afterPath="$PROJECT_DIR$/classe_catalogue_poo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commande.php" beforeDir="false" afterPath="$PROJECT_DIR$/commande.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panier.php" beforeDir="false" afterPath="$PROJECT_DIR$/panier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panierTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/panierTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +101,8 @@
       <workItem from="1582618894532" duration="16471000" />
       <workItem from="1582704041634" duration="18091000" />
       <workItem from="1582725971501" duration="3761000" />
-      <workItem from="1582791744065" duration="17553000" />
+      <workItem from="1582791744065" duration="22919000" />
+      <workItem from="1582877950109" duration="20398000" />
     </task>
     <task id="LOCAL-00001" summary="1er commit phpstorm">
       <created>1580732727962</created>
@@ -159,18 +164,18 @@
     </state>
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580732933238" />
     <state x="2012" y="92" width="1736" height="856" key="DiffContextDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580826097724" />
-    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1582719981570">
+    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1582816249006">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582719981570" />
+    <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582816249006" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1582211559469">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582211559469" />
-    <state x="2714" y="444" key="NewPhpFileDialog" timestamp="1582721477687">
+    <state x="2714" y="444" key="NewPhpFileDialog" timestamp="1582893139031">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582721477687" />
+    <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582893139031" />
     <state x="2714" y="444" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580821766743" />
     <state x="2381" y="163" key="SettingsEditor" timestamp="1580732679886">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -180,10 +185,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2012" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1580826097724" />
-    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582791745569">
+    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582878034389">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582791745569" />
+    <state x="3050" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582878034389" />
     <state x="2689" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581934409615">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -201,13 +206,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/panier.php</url>
-          <line>88</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/booter.php</url>
-          <line>70</line>
+          <line>24</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>

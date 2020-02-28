@@ -2,6 +2,10 @@
 // On démarre la session AVANT d'écrire du code HTML
 // Inclusion de la page booter.php qui va:  contenir la fonction session_start(), faire la connection à la BDD  ET inclure les fonctions et LANCER LA BDD via un fichier pour les utiliserdans ce fichier
 include('booter.php');
+include('functions.php');
+include('classe_catalogue_poo.php');
+include('classe_article_poo.php');
+include('classe_panier_poo.php');
 
 ?>
 
